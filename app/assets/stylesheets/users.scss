@@ -1,0 +1,31 @@
+.wrapper {
+  width: 600px;
+  margin: 0 auto;
+  margin-top: 100px;
+  p.alert {
+    color: red;
+    margin: 0;
+    padding: 0;
+  }
+  .social_login {
+    margin-top: 10px;
+    input {
+      margin-top: 5px;
+      color: white;
+      
+      &.facebook {
+        background-color: rgb(42, 64, 106);
+      }
+      &.twitter {
+        background-color: rgb(87, 198, 222);
+      }
+    }
+  }
+  .links {
+    text-align: right;
+  }
+}
+
+#error_explanation {
+    color: red;
+}
