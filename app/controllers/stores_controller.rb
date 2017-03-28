@@ -1,5 +1,7 @@
 class StoresController < ApplicationController
   def index
+    @q = Store.search(params[:q])
+    @stores = @q.result.page(params[:page]).per(10).order(:id)
   end
   
   def show
@@ -41,7 +43,7 @@ class StoresController < ApplicationController
   
   def create
     @store = Store.new(input_params)
-    @store.user_id = current.user.id
+    @store.user_id = current_user.id
     if params[:back]
       render :new
     else

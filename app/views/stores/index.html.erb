@@ -1,9 +1,44 @@
 <h1>Meet My Music Store</h1>
 <p>あなたの好きな音楽をあなたの言葉で世界とシェアする</p>
-
-
-<div class="new_store">
-    <%= button_to 'ストア追加', new_store_path, method: :get, class: 'btn btn-default' %>
+    
+<div class="wrapper stoer_index">
+    <div class="new_store">
+        <%= button_to 'ストア追加', new_store_path, method: :get, class: 'btn btn-default' %>
+    </div>
+    
+    <div class="clearfix">
+        <div class="col-mx-4">
+            <div class="search_wrapper">
+                <%= search_form_for @q, url: user_root_path do |f| %>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <%= f.label :title %><%= f.text_field :title_cont %>
+                        </li>
+                        <li class="list-group-item">
+                            <%= f.label :artist %><%= f.text_field :artist_cont %>
+                        </li>
+                        <li class="list-group-item">
+                            <%= f.label :release_date %><br />
+                            <%= f.date_field :release_date_gteq %> ~ <%= f.date_field :release_date_lteq %>
+                        </li>
+                        <li class="list-group-item">
+                            <%= f.submit '検索', class: 'btn btn-primary' %>
+                            <%= link_to 'クリア', request.path, class: 'btn btn-default' %>
+                        </li>
+                    </ul>
+                <% end %>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="store_list_count">
+                <%= @stores.length == 0 ? 0 : @stores.offset_value + 1 %> ~ <% @stores.offset_value + @stores.length %>枚目を表示 / 全<%= @stores.total_count %>枚
+            </div>
+            <div class="store_list">
+                <% @stores.each do |store| %>
+                    <%= render 'stores/per_store' %>
+                <% end %>
+            </div>
+            <div><%= paginate @stores %></div>
+        </div>
+    </div>
 </div>
-
-

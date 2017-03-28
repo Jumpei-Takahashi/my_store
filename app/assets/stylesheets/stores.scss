@@ -1,3 +1,86 @@
 .login_logout_wrapper {
   text-align: right;
 }
+
+.wrapper.store_input, .wrapper.stoer_confirm, .wrapper.store_index {
+    margin-top: 0;
+}
+
+.store_confirm {
+    tr.image {
+        img {
+            max-width: 380px;
+            max-height: 380px;
+        }
+    }
+}
+
+ul.genre.list {
+    list-style: none;
+    padding: 0;
+    li {
+        display: inline-block;
+        color: white;
+        background-color: #535353;
+        border-radius: 8px;
+        margin-right: 3px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+
+.wrapper.store_index {
+    width: 95%;
+    
+    .new_restaurant {
+        margin-bottom: 15px;
+    }
+    
+    .search_wrapper {
+        vertical-align: top;
+        
+        ul {
+            list-style: none;
+            padding: 0;
+            li {
+            }
+        }
+    }
+    
+    .store_list_count {
+        margin-bottom: 10px;
+    }
+    
+    .store_list {
+        .per_store {
+          border: 1px solid;
+          border-radius: 5px;
+          margin-bottom: 10px;
+          padding: 5px;
+          
+          .title {
+              font-size: 18px;
+              font-weight: bold;
+              margin-bottom: 5px;
+          }
+          
+          .content {
+              >div {
+                  float: left;
+              }
+              
+              .image {
+                  width: 100px;
+                  height: 100px;
+                  text-align: center;
+                  img {
+                      width: auto;
+                      height: auto;
+                      max-width: 100%;
+                      max-height: 100%;
+                  }
+              }
+          }
+        }
+    }
+}
