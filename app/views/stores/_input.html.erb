@@ -1,0 +1,64 @@
+<div class="wrapper store_input">
+    <div class="header">
+        <%= link_to "ストア一覧に戻る", root_path %>
+    </div>
+    
+    <hr>
+    
+    <h3>ストア登録</h3>
+    
+    <%= form_for @store, url: {action: 'confirm'} do |f| %>
+        
+        <div class="alert">
+            <% if flash[:alert] %>
+                <% flash[:alert].each do |message| %>
+                    <p class="alert"><%= message %></p>
+                <% end %>
+            <% end %>
+        </div>
+        
+        <div class="form-group">
+            <%= f.label :title %><br />
+            <%= f.text_field :title, autofocus: true, class: 'form-control' %>
+        </div>
+        
+        <div class= "form-group">
+            <%= f.label :artist %><br />
+            <%= f.text_field :artist, autofocus: true, class: 'form-control' %>
+        </div>
+        
+        <div class="form-group">
+            <%= f.label :genre_ids %><br />
+            <% Genre.all.order(:id).each do |g| %>
+                <label class="checkbox-inline">
+                    <%= f.check_box :genre_ids, { multiple: true, include_hidden: false, checked: @store.genre_ids.include?(g.id)}, g.id, nil %>
+                    <%= g.name %>
+                </label>
+            <% end %>
+        </div>
+        
+        <div class="form-group">
+            <%= f.label :release_date %><br />
+            <%= f.date_field :release_date, class: 'form-control' %>
+        </div>
+        
+        <div class="form-group">
+            <%= f.label :comment %><br />
+            <%= f.text_area :comment, class: 'form-control' %>
+        </div>
+        
+        <div class="form-group">
+            <%= label_tag I18n.t('activerecord.attributes.store.image') %><br />
+            <%= f.fields_for :store_images do |sf| %>
+                <%= sf.file_field :image %> <%= "設定中[#{sf.object.image}]" if sf.object.image? %>
+                <%= sf. hidden_field :image_cache %>
+            <% end %>
+        </div>
+        
+        <div class="actions">
+            <%= f.submit "確認", class: 'btn btn-primary' %>
+        </div>
+        
+    <% end %>
+        
+</div>

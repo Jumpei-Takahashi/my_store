@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
   root 'stores#index'
   get 'stores/index', as: 'user_root'
+   resources :stores do
+     member do
+       patch 'confirm'
+     end
+     collection do
+       post 'confirm'
+     end
+   end
 
   devise_for :users, controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks'

@@ -1,0 +1,57 @@
+<div class="wrapper store_confirm">
+    <h3>ストア登録確認</h3>
+    
+    <%= form_for @store do |f| %>
+        <table class="table">
+            <tr>
+                <th style="width:100px"><%= f.label :title %></th>
+                <td><%= @store.title %></td>
+                <%= f.hidden_field :title %>
+            </tr>
+            
+            <tr>
+                <th style="width:100px"><%= f.label :artist%>></th>
+                <td><%= @store.artist %></td>
+                <%= f.hidden_field :artist %>
+            </tr>
+            
+            <tr>
+                <th><%= f.label :genre_ids %></th>
+                <td>
+                    <%= render 'stores/genre_list', store: @store %>
+                </td>
+                <% @store.genre_ids.each do |s| %>
+                    <%= f.hidden_field :genre_ids, multiple: true, valu: s %>
+                <% end %>
+            </tr>
+            
+            <tr>
+                <th><%= f.label :release_date %></th>
+                <td><%= @store.release_date %></td>
+                <%= f.hidden_field :release_date %>
+            </tr>
+            
+            <tr>
+                <th style="width:200px"><%= f.label :comment %></th>
+                <td><%= @store.comment %></td>
+                <%= f.hidden_field :comment %>
+            </tr>
+            
+            <%= f.fields_for :store_images do |sf| %>
+                <% if sf.object.image? %>
+                    <tr class="image">
+                        <th><%= f.label :image %></th>
+                        <td><%= image_tag sf.object.image.url %></td>
+                    </tr>
+                <% end %>
+                <%= sf.hidden_field :image %>
+                <%= sf.hidden_field :image_cache %>
+            <% end %>
+        </table>
+        
+        <div class="actions">
+            <%= f.submit "戻る", class: 'btn btn-danger', name: 'back' %>
+            <%= f.submit "登録", class: 'btn btn-primary' %>
+        </div>
+    <% end %>
+</div>

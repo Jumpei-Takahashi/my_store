@@ -212,3 +212,10 @@ ja:
         password_confirmation: パスワード(確認)
         current_password: 現在のパスワード
         remember_me: ログイン状態を保存する
+      store:
+        title: タイトル
+        artist: アーティスト名
+        release_date: リリース日
+        comment: コメント
+        genre_ids: ジャンル
+        image: 画像
