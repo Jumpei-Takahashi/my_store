@@ -35,7 +35,7 @@
             </div>
             <div class="store_list">
                 <% @stores.each do |store| %>
-                    <%= render 'stores/per_store' %>
+                    <%= render 'stores/per_store', store: store %>
                 <% end %>
             </div>
             <div><%= paginate @stores %></div>

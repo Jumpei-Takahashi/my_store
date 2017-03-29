@@ -1,17 +1,19 @@
-<div class="per_store">
-    <div class="title">
-        <%= stores.title %>
+<%= link_to store_path(store) do %>
+    <div class="per_store">
+        <div class="title">
+            <%= store.title %>
+        </div>
+        <div class="content clearfix">
+            <div class="image">
+                <% if store.store_images.first.image? %>
+                    <%= image_tag store.store_images.first.image.url %>
+                <% end %>
+            </div>
+          <div>
+            <div class="genres">
+                <%= render 'stores/genre_list', store: store %>
+            </div>
+          </div>
+         </div>
     </div>
-    <div class="content clearfix">
-        <div class="image">
-            <% if store.store_images.first.image? %>
-                <%= image_tag stores.store_images.first.image.url %>
-            <% end %>
-        </div>
-      <div>
-        <div class="genres">
-            <%= render 'stores/genre_list' %>
-        </div>
-      </div>
-     </div>
-</div>
+<% end %>
