@@ -219,3 +219,6 @@ ja:
         comment: コメント
         genre_ids: ジャンル
         image: 画像
+        created: 作成しました
+        updated: 更新しました
+        deleted: 削除しました

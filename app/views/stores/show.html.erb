@@ -6,16 +6,51 @@
     <hr>
     
     <div class="clearfix">
-        <div class="title">
-            <%= @store.title %>
+        <div class="title info">
+            <%= label :store, :title %><%= @store.title %>
+        </div>
+        <p>/</p>
+        <div class="artist info">
+            <%= label :store, :artist %><%= @store.artist %>
         </div>
         
         <% if user_signed_in? && @store.user_id == current_user.id %>
             <div class="operation_store">
-                <%= link_to "編集", edit_store_path, class: "btn btn-default" %>
+                <%= link_to "編集", edit_store_path, class: "btn btn-primary" %>
                 <%= link_to "削除", store_path, method: :delete, class: "btn btn-danger", data: {confirm: "削除してよろしいですか？"} %>
             </div>
         <% end %>
     </div>
-    
+    <hr>
+    <div class="clearfix">
+        <div class="col-md-5 info">
+            <div>
+                <%= label :store, :release_date %><br />
+                <%= @store.release_date %>
+            </div>
+            <div>
+                <%= label :store, :genre_ids %><br />
+                <%= render 'stores/genre_list', store: @store %>
+            </div>
+            <div>
+                <%= label :store, :comment %><br />
+                <%= @store.comment %>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div class="big_image">
+                <%= image_tag @store.store_images.first.image.url, id: 'big_image' %>
+            </div>
+            
+            <ul class="small_images">
+                <% @store.store_images.each do |si| %>
+                  <% if si.image? %>
+                    <li>
+                      <%= image_tag si.image.url %>
+                    </li>
+                  <% end %>
+                <% end %>
+            </ul>
+        </div>
+    </div>
 </div>

@@ -33,7 +33,7 @@
         </div>
         <div class="col-md-8">
             <div class="store_list_count">
-                <%= @stores.length == 0 ? 0 : @stores.offset_value + 1 %> ~ <% @stores.offset_value + @stores.length %>枚目を表示 / 全<%= @stores.total_count %>枚
+                <%= @stores.length == 0 ? 0 : @stores.offset_value + 1 %> 〜 <%= @stores.offset_value + @stores.length %> 件目を表示 / 全<%= @stores.total_count %>件
             </div>
             <div class="store_list">
                 <% @stores.each do |store| %>

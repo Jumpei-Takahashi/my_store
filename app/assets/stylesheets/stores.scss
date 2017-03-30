@@ -1,20 +1,20 @@
 .wrapper.store_input, .wrapper.stoer_confirm, .wrapper.store_index {
-    margin-top: 0;
-    background-color: transparent;
+  margin-top: 0;
+  background-color: transparent;
 }
 
 .store_confirm {
-    tr.image {
-        img {
-            max-width: 380px;
-            max-height: 380px;
-        }
+  tr.image {
+    img {
+        max-width: 380px;
+        max-height: 380px;
     }
+  }
 }
 
 ul.genre.list {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
     li {
         display: inline-block;
         color: white;
@@ -27,7 +27,7 @@ ul.genre.list {
 }
 
 .wrapper.store_index {
-    width: 95%;
+  width: 95%;
     
     .new_store {
         margin-bottom: 15px;
@@ -36,13 +36,13 @@ ul.genre.list {
     .search_wrapper {
         vertical-align: top;
         
-        ul {
-            list-style: none;
-            padding: 0;
-            li {
-                font-size: 12px;
-            }
-        }
+      ul {
+        list-style: none;
+        padding: 0;
+          li {
+            font-size: 12px;
+          }
+      }
     }
     
     .store_list_count {
@@ -50,35 +50,76 @@ ul.genre.list {
     }
     
     .store_list {
-        .per_store {
-          border: 1px solid;
-          border-radius: 5px;
-          margin-bottom: 10px;
-          padding: 5px;
+        background-color: white;
+      .per_store {
+         border: 1px solid gray;
+         border-radius: 5px;
+         margin-bottom: 10px;
+         padding: 5px;
           
-          .title {
-              font-size: 18px;
-              font-weight: bold;
-              margin-bottom: 5px;
-          }
+      .title, .artist {
+         font-size: 18px;
+         font-weight: bold;
+         margin-bottom: 5px;
+      }
           
-          .content {
-              >div {
-                  float: left;
-              }
-              
-              .image {
-                  width: 100px;
-                  height: 100px;
-                  text-align: center;
-                  img {
-                      width: auto;
-                      height: auto;
-                      max-width: 100%;
-                      max-height: 100%;
-                  }
-              }
-          }
+      .content {
+        >div {
+            float: left;
         }
+              
+        .image {
+            width: 70px;
+            height: 70px;
+            text-align: center;
+            img {
+                width: auto;
+                height: auto;
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+      }
+      }
     }
+}
+
+.wrapper.store_show {
+  .title, .artist {
+   float: left;
+   font-size: 18px;
+   }
+  .operation_store {
+   float: right;
+   }
+  .big_image {
+   text-align: center;
+    img {
+     width: 100%;
+     height: 100%;
+    }
+   }
+  ul.small_images {
+   list-style: none;
+   padding: 0;
+    li {
+     display: inline-block;
+    }
+    img {
+     width: 100px;
+     height: 100px;
+     margin: 15px;
+    }
+   }
+  .info {
+    > div {
+      margin-bottom: 10px;
+    }
+    label {
+      margin-right: 15px;
+    }
+   .store_introduction {
+      font-weight: bold;
+   }
+  }
 }
