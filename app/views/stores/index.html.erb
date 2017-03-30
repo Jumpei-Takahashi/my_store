@@ -1,21 +1,23 @@
 <h1>Meet My Music Store</h1>
 <p>あなたの好きな音楽をあなたの言葉で世界とシェアする</p>
     
-<div class="wrapper stoer_index">
+<div class="wrapper store_index">
     <div class="new_store">
-        <%= button_to 'ストア追加', new_store_path, method: :get, class: 'btn btn-default' %>
+        <%= button_to 'ストア追加', new_store_path, method: :get, class: 'btn btn-primary' %>
     </div>
     
     <div class="clearfix">
-        <div class="col-mx-4">
+        <div class="col-md-4">
             <div class="search_wrapper">
                 <%= search_form_for @q, url: user_root_path do |f| %>
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <%= f.label :title %><%= f.text_field :title_cont %>
+                            <%= f.label :title %><br />
+                            <%= f.text_field :title_cont %>
                         </li>
                         <li class="list-group-item">
-                            <%= f.label :artist %><%= f.text_field :artist_cont %>
+                            <%= f.label :artist %><br />
+                            <%= f.text_field :artist_cont %>
                         </li>
                         <li class="list-group-item">
                             <%= f.label :release_date %><br />

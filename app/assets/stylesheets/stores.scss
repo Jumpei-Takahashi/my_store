@@ -1,9 +1,6 @@
-.login_logout_wrapper {
-  text-align: right;
-}
-
 .wrapper.store_input, .wrapper.stoer_confirm, .wrapper.store_index {
     margin-top: 0;
+    background-color: transparent;
 }
 
 .store_confirm {
@@ -32,7 +29,7 @@ ul.genre.list {
 .wrapper.store_index {
     width: 95%;
     
-    .new_restaurant {
+    .new_store {
         margin-bottom: 15px;
     }
     
@@ -43,6 +40,7 @@ ul.genre.list {
             list-style: none;
             padding: 0;
             li {
+                font-size: 12px;
             }
         }
     }

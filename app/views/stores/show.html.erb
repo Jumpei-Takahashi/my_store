@@ -1,0 +1,21 @@
+<div class="wrapper store_show">
+    <div class="header">
+        <%= link_to "ストア一覧に戻る", root_path %>
+    </div>
+    
+    <hr>
+    
+    <div class="clearfix">
+        <div class="title">
+            <%= @store.title %>
+        </div>
+        
+        <% if user_signed_in? && @store.user_id == current_user.id %>
+            <div class="operation_store">
+                <%= link_to "編集", edit_store_path, class: "btn btn-default" %>
+                <%= link_to "削除", store_path, method: :delete, class: "btn btn-danger", data: {confirm: "削除してよろしいですか？"} %>
+            </div>
+        <% end %>
+    </div>
+    
+</div>
