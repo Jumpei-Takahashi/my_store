@@ -6,6 +6,11 @@ class StoresController < ApplicationController
   
   def show
     @store = Store.find(params[:id])
+     if user_signed_in?
+       if @store.reviews.select{|s| s.user_id == current_user.id}.length == 0
+         @review = Review.new
+       end
+     end
   end
   
   def new

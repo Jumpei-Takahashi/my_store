@@ -2,6 +2,7 @@ class Store < ActiveRecord::Base
     has_many :store_genres
     has_many :genres, through: :store_genres
     has_many :store_images, dependent: :destroy
+    has_many :reviews,      dependent: :destroy
     accepts_nested_attributes_for :store_images
     
     validates :title,           presence: true

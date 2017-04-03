@@ -53,4 +53,35 @@
             </ul>
         </div>
     </div>
+    
+    <% if user_signed_in? %>
+    <div class="my_review_wrapper">
+      <% if @review %>
+        <%= form_for @review do |f| %>
+          <%= f.cktext_area :body, rows: 3, placeholder: 'レビューを書く' %>
+          <div class="footer_menu clearfix">
+            <div class="review_post">
+              <%= f.submit 'レビュー', class: 'btn btn-primary' %>
+            </div>
+          </div>
+          <%= f.hidden_field :store_id, value: @store.id %>
+        <% end %>
+      <% else %>
+        <p>レビュー済みです</p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <hr>
+
+  <div class="review_list_wrapper">
+    レビュー数 <%= @store.reviews.length %>
+
+    <div class="review_list">
+      <% @store.reviews.each do |review| %>
+        <%= render 'reviews/per_review', review: review %>
+      <% end %>
+    </div>
+  </div>
+  
 </div>
