@@ -26,9 +26,21 @@ ul.genre.list {
     }
 }
 
+div.top {
+    text-align: center;
+    font-size: 48px;
+    font: bold;
+}
+
+div.social_button {
+    text-align: right;
+    float: right;
+    margin-right: 5px;
+}
+
 .wrapper.store_index {
   width: 95%;
-    
+
     .new_store {
         margin-bottom: 15px;
     }

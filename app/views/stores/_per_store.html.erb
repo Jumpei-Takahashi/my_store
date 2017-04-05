@@ -1,5 +1,9 @@
 <%= link_to store_path(store) do %>
     <div class="per_store">
+        <div class="release_date">
+            <label>リリース日</label>
+            <%= store.release_date %>
+        </div>
         <div class="title">
             <%= store.title %>
         </div>

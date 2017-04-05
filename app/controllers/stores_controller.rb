@@ -1,7 +1,7 @@
 class StoresController < ApplicationController
   def index
     @q = Store.search(params[:q])
-    @stores = @q.result.page(params[:page]).per(5).order(:id)
+    @stores = @q.result.page(params[:page]).per(5).order('updated_at DESC')
   end
   
   def show
