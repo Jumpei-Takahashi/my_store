@@ -33,7 +33,7 @@
             
             <tr>
                 <th style="width:200px"><%= f.label :comment %></th>
-                <td><%= @store.comment %></td>
+                <td><%= raw @store.comment %></td>
                 <%= f.hidden_field :comment %>
             </tr>
             

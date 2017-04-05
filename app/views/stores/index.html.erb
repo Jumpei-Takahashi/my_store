@@ -22,12 +22,15 @@
                             <%= f.label :release_date %><br />
                             <%= f.date_field :release_date_gteq %> ~ <%= f.date_field :release_date_lteq %>
                         </li>
+                        
                         <li class="list-group-item">
                             <%= f.submit '検索', class: 'btn btn-primary' %>
                             <%= link_to 'クリア', request.path, class: 'btn btn-default' %>
                         </li>
                     </ul>
                 <% end %>
+            <a class="twitter-timeline"  href="https://twitter.com/hashtag/oricon" data-widget-id="849134447471362049">#oricon のツイート</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
             </div>
         </div>
         <div class="col-md-8">

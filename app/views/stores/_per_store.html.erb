@@ -12,11 +12,12 @@
                     <%= image_tag store.store_images.first.image.url %>
                 <% end %>
             </div>
-          <div>
+          
             <div class="genres">
+                <p>ジャンル</p>
                 <%= render 'stores/genre_list', store: store %>
             </div>
-          </div>
+          
          </div>
     </div>
 <% end %>
